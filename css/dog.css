@@ -1,0 +1,8 @@
+
+
+
+.container{ width:800px; height: auto; float: left;}
+.cat_container{ width:300px; height: auto; float: left; border: solid 1px #ccc; border-radius:6px; margin-right:20px; padding:20px; text-align: center;}
+.dog_container{ width:300px; height: auto; float: left; border: solid 1px #ccc; border-radius:6px; padding:20px; text-align: center;}
+.dog-img img{ width:100%; display:block;}
+button{ cursor: pointer; background-color:green; color:#fff; font-size:16px; border-radius:10px; padding:6px 20px; border:none; margin-top:20px;}

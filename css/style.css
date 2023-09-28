@@ -1,0 +1,127 @@
+*{ margin:0px; padding:0px;}
+
+body{ font-family: Arial, Helvetica, sans-serif;text-align:center;background:url(../images/bg.jpg) left top repeat-x;
+  background-size: cover;}
+
+.container{ width:1140px; height:100vh; margin:0 auto;}
+.main{ width:1140px; height:auto; margin:0 auto; padding:40px;} 
+.meal-search{ width:1140px; text-align:center; float: left;}
+.meal-search h1{ font-size:50px;} 
+.meal-search p{ font-size:16px;} 
+
+/* Search box css starts from here */ 
+
+.meal-search-box{ width:700px; height: auto; margin:0 auto;}
+.search-content{ width:80%;; height:48px; float:left; border:solid 1px #ccc; border-radius:6px; padding:4px 10px; margin:20px 0;}
+.search-btnn{ width:20%;; height:48px; float:left; background-color: black; margin:20px 0; cursor: pointer; margin-left: -20px;
+border:none; border-radius:6px;}
+
+.meal_result{width:1140px; height:auto; float: left;}
+.meal_result h2{ font-size:30px;}
+
+.meal-items{ width:30%; height:auto; float:left; background-color:#fff; border:solid 1px #ccc; border-radius:4px; margin-left: 10px; margin-top:20px;}
+.meal-img img{width:100%; display: block;}
+.meal-name h3{ font-size:20px; padding:10px 0;}
+.recipe-btn{ background-color:green; font-size:18px; color:#fff; text-decoration:none; cursor: pointer; padding:6px 20px; border-radius:6px;
+ margin-bottom:20px;}
+
+.not-found{ font-size:34px;color:red; text-align: center; text-decoration:none; font-weight:bold;}
+
+.meal-details{ width:550px; height: auto; float:left; background-color:orange; border-radius:4px; padding:20px; position: absolute;
+    top: 50px;
+    left: 33%; display: none;}
+.meal-details-content{width:550px; height: auto; float:left;}
+.meal-details-content h2{width:550px; height: auto; float:left; color:#fff; font-size:34px;}
+.instructions{width:550px; height: auto; float:left;}
+.instructions h3{width:550px; height: auto; float:left; color:#fff; font-size:18px;}
+.instructions p{width:550px; height: auto; float:left; color:#fff; font-size:13px; line-height:18px;}
+
+.fav_icon{ width: 193px;
+  height: auto;
+  float: left;
+  background-color: red;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 6px 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 142px;
+  right: 61px;
+  border: none;
+  padding: 12px 22px;}
+.recipe-meal-image{    width: 50%;
+    height: auto;
+    float: left;
+    margin-top: 20px;
+    text-align: center; margin-top:20px; text-align: center;}
+.recipe-meal-image img{width:100%; height: auto; float:left; display: block; border-radius:6px; position: relative;
+    left: 50%;}
+.icon-close{ color:#fff; background-color:#000; border-radius:4px; font-size:16px;padding:6px; border:none; cursor:pointer; position:absolute;
+    right: 10px;
+    top: 11px;
+}
+
+.showRecipe{ display: block;}
+
+/* checkbox Css Starts from here */
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form-group {
+    display: block;
+    margin-bottom: 15px;    width: 122px;
+    position: relative;
+    /* right: 60%; */
+    left: 59%;
+    top: -22px;
+  }
+  
+  .form-group input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .form-group label {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .form-group label:before {
+    content:'';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #0079bf;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .form-group input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid #0079bf;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+

@@ -1,0 +1,106 @@
+
+<html lang='en'>
+	<head>
+		<title> Fetch Dog Api </title>
+		<meta charset='UFT-8' name='viewport' content='width=device-width, initial=scale=1.0' >
+        <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        
+
+        <style>
+
+.container{ width:800px; height: auto; float: left;}
+.cat_container{ width:300px; height: auto; float: left; border: solid 1px #ccc; border-radius:6px; margin-right:20px; padding:20px; text-align: center;}
+.dog_container{ width:300px; height: auto; float: left; border: solid 1px #ccc; border-radius:6px; padding:20px; text-align: center;}
+.cat-img img{ width:100%; display:block;}
+.dog-img img{ width:100%; display:block;}
+ button{ cursor: pointer; background-color:green; color:#fff; font-size:16px; border-radius:10px; padding:6px 20px; border:none; margin-top:20px;}
+
+.red-color{color:red;} 
+
+</style> 
+		
+	</head> 
+
+	<body> 
+
+  <div class="container">
+
+  <input type="checkbox" class="red-color" id="bgColor"/> 
+
+  <div class="cat_container">
+
+ <div class="cat-img" id="cat_result"> image here </div>
+ <button type="button" id="cat_btn"> Get Cat </button>
+  
+   </div>
+
+   <div class="dog_container"> 
+
+    <div class="dog-img" id="dog_result"> image here </div>
+    <button type="button" id="dog_btn"> Get Dog </button>
+     
+  </div>
+
+  </div>
+
+   <script>
+    
+   const chnageColor = document.getElementById('bgColor');
+   chnageColor.addEventListener('click', getChnageColor);
+
+   function getChnageColor(){
+
+    if(chnageColor.checked == true){
+  
+      chnageColor.classList.add('red-color');
+      
+    }
+
+   }
+
+   function setnsLetter(id) {
+    if (id == "NULL") { }
+    else if (id == "1") {
+        document.getElementById("chkNLetterY").value = "1";document.getElementById("imgchkNLetterY").src = "../images/check-1.png";document.getElementById("imgchkNLetterN").src = "../images/no-check-1.png";
+    } else {
+        document.getElementById("chkNLetterY").value = "0";document.getElementById("imgchkNLetterY").src = "../images/no-check-1.png";document.getElementById("imgchkNLetterN").src = "../images/check-1.png";
+    }
+}
+
+   const cat_result = document.getElementById('cat_result');
+   const dog_result = document.getElementById('dog_result');
+   const cat_btn = document.getElementById('cat_btn');
+   const dog_btn = document.getElementById('dog_btn');
+
+   cat_btn.addEventListener('click', getCatImage);
+   dog_btn.addEventListener('click', getDogImage);
+   
+
+   function getCatImage(){
+   fetch(`https://randomfox.ca/floof/`)
+   .then(res => res.json())
+   .then(data =>{
+
+    cat_result.innerHTML = `<img 
+    src="${data.image}"/>`
+   });
+   }
+
+   function getDogImage(){
+   fetch(`https://random.dog/woof.json`)
+   .then(res => res.json())
+   .then(data =>{
+
+    dog_result.innerHTML = `<img 
+    src="${data.url}"/>`
+   });
+   }
+
+
+
+
+   </script>
+
+
+</body>
+</html>
