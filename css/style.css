@@ -27,14 +27,19 @@ border:none; border-radius:6px;}
 
 .not-found{ font-size:34px;color:red; text-align: center; text-decoration:none; font-weight:bold;}
 
-.meal-details{ width:550px; height: auto; float:left; background-color:orange; border-radius:4px; padding:20px; position: absolute;
-    top: 50px;
-    left: 33%; display: none;}
+.meal-details{ width:630px; height: auto; float:left; background-color:#000; border-radius:4px; padding:20px; position:fixed;
+    top:0px;
+    left:30%; display:none;}
 .meal-details-content{width:550px; height: auto; float:left;}
 .meal-details-content h2{width:550px; height: auto; float:left; color:#fff; font-size:34px;}
 .instructions{width:550px; height: auto; float:left;}
 .instructions h3{width:550px; height: auto; float:left; color:#fff; font-size:18px;}
 .instructions p{width:550px; height: auto; float:left; color:#fff; font-size:13px; line-height:18px;}
+
+.recipe-links{ width:630px; height: auto; float:left; margin-top:20px;}
+.recipe-links a{ text-align:center; font-size:16px; background-color:#fff; 
+  border-radius:4px; padding:5px 35px; cursor:pointer; text-decoration:none; font-weight:bold; color:#000;}
+
 
 .fav_icon{ width: 193px;
   height: auto;

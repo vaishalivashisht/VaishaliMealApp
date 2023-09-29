@@ -82,14 +82,13 @@ mealList.innerHTML = html;
 
 }); 
 
-}
+} 
 
 //get the favourite Meal
 
 function getMealfav(){ 
   
     document.getElementById('favText').innerHTML = "Your Fav Meal!";
-
 
     let searchInputText =  document.getElementById('search-input').value.trim();
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`)
