@@ -36,7 +36,7 @@ fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`)
 .then(data => { 
 let html = ""; 
 if(data.meals){ 
-    var lstfav=localStorage.getItem("myfav").trim();
+    var lstfav=sessionStorage.getItem("myfav").trim();
 data.meals.forEach(meal =>{
 html += `<div class="meal-items" data-id = "${meal.idMeal}"> 
 <div class="meal-img"> 
@@ -150,7 +150,7 @@ function setfav(e){
     if(favlist==null){favlist='';}
     if(e.checked==true){
         if(favlist.indexOf(e.value.trim())<0){
-    localStorage.setItem("myfav",favlist+=e.value.trim()+",");
+            sessionStorage.setItem("myfav",favlist+=e.value.trim()+",");
     console.log(favlist);
         }
        
