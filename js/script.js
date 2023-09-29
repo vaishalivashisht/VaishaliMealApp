@@ -93,7 +93,7 @@ function getMealfav(){
     .then(data => { 
     let html = ""; 
     if(data.meals){ 
-        var lstfav=localStorage.getItem("myfav").trim();
+        var lstfav=sessionStorage.getItem("myfav").trim();
     data.meals.forEach(meal =>{
        if(lstfav.indexOf(meal.strMeal.trim())>=0){
 
@@ -146,7 +146,7 @@ fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.i
 
 function setfav(e){
   
-    var favlist=localStorage.getItem("myfav");
+    var favlist=sessionStorage.getItem("myfav");
     if(favlist==null){favlist='';}
     if(e.checked==true){
         if(favlist.indexOf(e.value.trim())<0){
@@ -158,7 +158,7 @@ function setfav(e){
 if(e.checked==false){
     if(favlist.indexOf(e.value.trim())>=0){
         favlist=favlist.replace(new RegExp(e.value.trim()+",", "g"),"");
-localStorage.setItem("myfav",favlist);
+        sessionStorage.setItem("myfav",favlist);
 console.log(favlist);
 }
    
