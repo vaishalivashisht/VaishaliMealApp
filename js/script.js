@@ -36,7 +36,12 @@ fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputText}`)
 .then(data => { 
 let html = ""; 
 if(data.meals){ 
-    var lstfav=sessionStorage.getItem("myfav").trim();
+    var lstfav=sessionStorage.getItem("myfav")
+    if(lstfav==null){
+        lstfav='';
+    }
+    lstfav=lstfav.trim();
+
 data.meals.forEach(meal =>{
 html += `<div class="meal-items" data-id = "${meal.idMeal}"> 
 <div class="meal-img"> 
@@ -93,7 +98,11 @@ function getMealfav(){
     .then(data => { 
     let html = ""; 
     if(data.meals){ 
-        var lstfav=sessionStorage.getItem("myfav").trim();
+        var lstfav=sessionStorage.getItem("myfav");
+        if(lstfav==null){
+        lstfav='';
+    }
+    lstfav=lstfav.trim();
     data.meals.forEach(meal =>{
        if(lstfav.indexOf(meal.strMeal.trim())>=0){
 
@@ -151,6 +160,7 @@ function setfav(e){
     if(e.checked==true){
         if(favlist.indexOf(e.value.trim())<0){
             sessionStorage.setItem("myfav",favlist+=e.value.trim()+",");
+            localStorage.setItem("myfav",favlist+=e.value.trim()+",");
     console.log(favlist);
         }
        
@@ -163,9 +173,6 @@ console.log(favlist);
 }
    
 } 
-
-
-
 } 
 
 //function set(){favlist.push(data); localStorage.setItem("myfav",favlist)}
